@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Form Elements</title>
+</head>
+<body>
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Add name" id="name"/>
+        <input type="text" placeholder="Add Age" id="age"/>
+        <input type="text" placeholder="Add Gender" id="gender"/>
+        <button type="submit">Submit</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody id = "body6"></tbody>
+        </table>
+    <script>
+        const inputValues = [];
+        function handleSubmit(e){
+            e.preventDefault();
+            inputValues.push({
+                name : document.querySelector('[id="name"]').value,
+                age : document.querySelector('[id="age"]').value,
+                gender : document.querySelector('[id="gender"]').value
+            })
+            addToTable()
+        }
+
+        function addToTable() {
+            const body = document.querySelector("#body6");
+            let row;
+            inputValues.forEach((input) => {
+                row = document.createElement('tr');
+                let name = document.createElement("td");
+                let age = document.createElement("td");
+                let gender = document.createElement("td");
+
+                name.innerText = input.name;
+                age.innerText = input.age;
+                gender.innerText = input.gender;
+
+                row.appendChild(name);
+                row.appendChild(age);
+                row.appendChild(gender);
+            })
+            console.log("RR", row);
+            body.appendChild(row);
+        }
+    </script>
+</body>
+</html>

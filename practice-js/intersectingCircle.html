@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle on Click</title>
+</head>
+<body>
+    <script>
+        let arr = [];
+        document.addEventListener('click', function(e) {
+
+            let x = e.clientX;
+            let y = e.clientY;
+
+            let circle = document.createElement('span');
+
+            let randomRadius = (Math.random() * 100) + 20;
+
+            let radius = randomRadius+"px";
+
+            circle.style.top = y-50 + 'px';
+            circle.style.left = x-50 + 'px';
+            
+            circle.style.borderRadius = "50%";
+            circle.style.border = "1px solid red"
+            circle.style.position = "fixed"
+
+            circle.style.width = radius;
+            circle.style.height = radius;
+
+            document.body.appendChild(circle);
+
+            circle.classList.add('circle');
+            
+            circle.setAttribute("id", "myCircle")
+
+            let nC = document.querySelectorAll(".circle");
+
+            arr.push(x);
+            arr.push(y);
+
+            if (nC.length > 2) {
+                nC.forEach(element => {
+                    document.body.removeChild(element);
+                }); 
+                let disBetweenCenter = Math.sqrt(Math.pow(arr[0] - arr[2], 2) + Math.pow(arr[1] - arr[3], 2))
+
+                arr = [];
+                if (disBetweenCenter < randomRadius) {
+                    console.log("Intersecting")
+                }
+                else {
+                    console.log("Not Intersecting")
+                }
+            }
+        })
+    </script>
+</body>
+</html>

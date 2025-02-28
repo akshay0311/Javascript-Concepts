@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+</head>
+<body>
+    <div>
+        <h1>Click</h1>
+        <button id = "clik">Click</button>
+    </div>
+    <script>
+        const promise = new Promise((resolve) => {
+            document.getElementById('clik').addEventListener('click', () => {
+                resolve('Promise resolved!');
+            });
+        });
+
+        promise.then((message) => {
+            console.log(message);
+            alert(message);
+        });
+    </script>
+    </script>
+</body>
+</html>

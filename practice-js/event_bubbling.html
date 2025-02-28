@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Event Bubbling</title>
+        <style>
+            #grandparent {
+                border: 2px solid red;
+                padding: 20px;
+            }
+            #parent {
+                border: 2px solid blue;
+                padding: 20px;
+            }
+            #child {
+                border: 2px solid black;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "grandparent">
+            <div id="parent">
+                <div id="child">
+                    <div id="cc">
+                        <span>Click Me 1!!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function newFunction() {
+            document.getElementById("cc").addEventListener('click',function(e) {
+                console.log("Indian cc");
+            }, false)
+            document.getElementById("child").addEventListener('click',function(e) {
+                console.log("Indian Child");
+                // e.stopPropagation()
+            }, true)
+            document.getElementById("parent").addEventListener('click',function(e) {
+                console.log("Indian Parent");
+            }, true)
+            document.getElementById("grandparent").addEventListener('click',function(e) {
+                console.log("Indian Grandparent");
+            }, false)
+        }
+        newFunction();
+        // function cFunc() {
+        //     console.log("C");
+        // }
+
+        // function pFunc() {
+        //     console.log("P");
+        // }
+
+        // document.getElementById("grandparent").addEventListener('click',function(e) {
+        //     console.log("Indian Grandparent");
+        // }, false)
+    </script>
+</html>

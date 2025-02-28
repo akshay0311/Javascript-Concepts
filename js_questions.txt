@@ -1,0 +1,33 @@
+HTML
+----*-------
+Why do we use doctype ?
+What is the use of head ?
+Where to link <script> tag ?
+Use of attribute defer ?
+Diff b/w async and defer ?
+Difference b/w inline and block element ?
+What is display properties of image ?
+What is box model ?
+
+
+Javascript 
+------*--------
+1 What are different types of data types 
+2 typeof Class, Array, Object 
+3. What are promises 
+4. Creart a promise and resolve it when a button is clicked 
+5. Create a promise without using new Promise 
+6. How to put the promise in pending and resolve it with some other val 
+7. How to make a file module and use await keyword without async 
+8. If execution at await is stopped then it will not stop execution of main thread of js
+10. export variable 
+
+11. console.log ("start");
+    import {variable} from "./script";
+
+    console.log(variable);
+
+12. Global Scope vs Module Scope vs Function Scope
+
+13. When user click create a circle with a random radius, if user click again a new circle is created, and check if it is intersecting 
+or not 
