@@ -1,13 +1,22 @@
 HTML
 ----*-------
-Why do we use doctype ?
-What is the use of head ?
-Where to link <script> tag ?
-Use of attribute defer ?
-Diff b/w async and defer ?
-Difference b/w inline and block element ?
-What is display properties of image ?
-What is box model ?
+1. Why do we use doctype ?
+2. What is the use of head ?
+3. Where to link <script> tag ?
+4. Use of attribute defer ?
+5. Diff b/w async and defer ?
+6. Difference b/w inline and block element ?
+   Block element takes width of the parent 
+7. What is display properties of image ?
+8. What is box model ?
+9. Postion in css 
+10. Creating a custom tags and how it will work div or span?
+11. Can I give height and width to the inline element like span?
+    In order to do that provide display:block 
+12. On parent which is div display:flex property is given then will it take height and width on span?
+
+It will take cuz child elements inside display:flex elements will take display:block property
+
 
 
 Javascript 
@@ -31,3 +40,58 @@ Javascript
 
 13. When user click create a circle with a random radius, if user click again a new circle is created, and check if it is intersecting 
 or not 
+
+14. Difference b/w if/else and tenary operator
+    
+    if/else is a statement and tenary operator is an expression
+
+15. Diff b/w statement and expression 
+    
+    Expression evaluated to a single value
+    Statement cannot 
+
+16. Shallow Copy vs Deep Copy ?
+
+17. Closure and its use 
+
+18. console.log(a);  // undefined 
+    console.log(b); // Reference Error
+    
+    var a = b = 5;
+
+19. var a = 5;
+    console.log(a++);
+    console.log(a);
+
+20  console.log(1 < 2 < 3);
+    console.log(3 > 2 > 1);
+
+21. const foo = () => {
+        console.log(this.name);
+    }
+
+    foo.call({name : 'John'});
+
+22.  const foo = function() {
+        console.log(this.name);
+        const bar = () => {
+            console.log(this.name);
+        }
+        bar();
+    }
+
+    foo.call({name : 'John'});
+
+23. const user = {
+        id : 123,
+        name : "Akshay",
+        age : 28,
+        address : {
+            city : "Mumbai",
+            state : "Maharashtra"
+        }
+    }
+
+    Object.defineProperties(user, {id: {writable: false}});
+
+25. Fix bug ....centre the modal and make it working 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        .list-div {
+            display : flex;
+        }
+        .list-div span {
+            margin-right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" class="addTask"/>
+        <button class="add">+</button>
+    </div>
+    <br/>
+    <div class="list"></div>
+    <script>
+        const add = document.querySelector(".add")
+        const list = document.querySelector(".list")
+        const input = document.querySelector(".addTask");
+        let remove;
+        add.addEventListener("click", function(e) {
+            const listdiv = document.createElement("div");
+            const listspan = document.createElement("span");
+            remove = document.createElement("span");
+            if (input.value !== "") {
+                listspan.innerText = input.value;
+                remove.innerText = "x";
+                listdiv.appendChild(listspan);
+                listdiv.appendChild(remove);
+                listdiv.classList.add("list-div");
+                list.appendChild(listdiv);
+            }
+            remove?.addEventListener('click', function(e) {
+                let listdiv = e.target.parentNode;
+                console.log(listdiv);
+                listdiv.remove()
+            })
+        })
+       
+    </script>
+</body>
+</html>

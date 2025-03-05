@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopWatch</title>
+</head>
+<body>
+    <span class="time">00</span>
+    <div>
+        <button class="toggle">Start</button>
+        <button class="reset">Reset</button>
+    </div>
+    <script>
+        const toggle = document.querySelector(".toggle");
+        const time = document.querySelector(".time");
+        const reset = document.querySelector(".reset");
+
+        let i = 0, intervalId;
+        toggle.addEventListener('click', function(e) {
+            if (e.target.innerText === "Start") {
+                e.target.innerText = "Stop";
+                intervalId = setInterval(()=> {
+                    i+=1;
+                    time.innerText = i;
+                },1000)
+            }
+            else {
+                clearInterval(intervalId);
+                e.target.innerText = "Start"
+            }
+        })
+
+        reset.addEventListener('click', function(e) {
+            clearInterval(intervalId);
+            i = 0;
+            time.innerText = i;
+            toggle.innerText = "Start";
+        })
+
+    </script>
+</body>
+</html>
